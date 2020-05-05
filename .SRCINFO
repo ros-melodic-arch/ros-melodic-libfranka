@@ -1,0 +1,16 @@
+pkgbase = libfranka
+	pkgdesc = C++ library for Franka Emika research robots
+	pkgver = 0.8.0
+	pkgrel = 1
+	url = https://github.com/frankaemika/libfranka
+	arch = x86_64
+	license = Apache
+	depends = cmake
+	depends = git
+	depends = poco
+	depends = eigen
+	source = git://github.com/frankaemika/libfranka
+	md5sums = SKIP
+
+pkgname = libfranka
+
