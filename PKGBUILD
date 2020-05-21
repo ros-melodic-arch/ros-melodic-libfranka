@@ -1,28 +1,22 @@
-# This is an example PKGBUILD file. Use this as a start to creating your own,
-# and remove these comments. For more information, see 'man PKGBUILD'.
-# NOTE: Please fill out the license field for your package! If it is unknown,
-# then please put 'unknown'.
-
-# Maintainer: Your Name <youremail@domain.com>
 pkgname="ros-melodic-libfranka"
 pkgver="0.7.1"
-_pkgver_patch=1
 pkgrel=1
 pkgdesc="C++ library for Franka Emika research robots "
-arch=(x86_64)
-url="https://github.com/frankaemika/libfranka"
+arch=('i686' 'x86_64' 'aarch64' 'armv7h' 'armv6h')
+url="http://wiki.ros.org/libfranka"
 license=('Apache')
 
 ros_makedepends=(ros-melodic-roscpp ros-melodic-catkin)
 makedepends=('cmake' 'ros-build-tools' ${ros_makedepends[@]})
 
+ros_depends=()
 depends=('eigen' 'poco' ${ros_depends[@]})
 
 provides=($pkgname)
 conflicts=($pkgname)
-_dir="libfranka-release-release-melodic-libfranka-$pkgver-$_pkgver_patch"
-source=("ros-melodic-libfranka-$pkgver-$_pkgver_patch.tar.gz::https://github.com/frankaemika/libfranka-release/archive/release/melodic/libfranka/$pkgver-$_pkgver_patch.tar.gz")
-md5sums=('86f1aacc71666f7c2357e87445967ba6')
+_dir="libfranka-release-release-melodic-libfranka"
+source=("ros-melodic-libfranka-$pkgver.tar.gz::https://github.com/frankaemika/libfranka-release/archive/release/melodic/libfranka/$pkgver.tar.gz")
+sha256sums=("508c192bfad0db8758f76bda1d6a6bc64164bbc747fb25372a55313cafd9a5b7")
 
 build() {
 	# Use ROS environment variables
